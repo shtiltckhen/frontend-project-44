@@ -1,10 +1,11 @@
 const getRandomInt = () => Math.floor((Math.random() * 99) + 1);
 
 export default () => {
-  let num1 = getRandomInt(100);
-  let num2 = getRandomInt(100);
+  const task = 'Find the greatest common divisor of given numbers.';
+  let num1 = getRandomInt();
+  let num2 = getRandomInt();
 
-  console.log(`Question: ${num1} ${num2}`);
+  const question = `${num1} ${num2}`;
 
   while (num1 !== num2) {
     if (num1 > num2) {
@@ -14,5 +15,5 @@ export default () => {
     }
   }
   const correctAnswer = String(num1);
-  return correctAnswer;
+  return [task, question, correctAnswer];
 };

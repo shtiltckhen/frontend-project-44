@@ -1,12 +1,16 @@
 import readlineSync from 'readline-sync';
 
-export default (getCorrectAnswer) => {
+export default (getComponents) => {
+  const [task] = getComponents();
+
+  console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('What is the result of the expression?');
+  console.log(task);
 
   for (let i = 0; i < 3; i += 1) {
-    const correctAnswer = getCorrectAnswer();
+    const [, question, correctAnswer] = getComponents();
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
 
     if (answer === correctAnswer) {

@@ -1,6 +1,7 @@
 const getRandomInt = (max) => Math.floor(Math.random() * max);
 
 export default () => {
+  const task = 'What is the result of the expression?';
   const num1 = getRandomInt(100);
   const num2 = getRandomInt(10);
   const signs = ['+', '-', '*'];
@@ -25,7 +26,5 @@ export default () => {
       break;
   }
 
-  console.log(`Question: ${question}`);
-
-  return correctAnswer;
+  return [task, question, correctAnswer];
 };
