@@ -1,14 +1,17 @@
-const getRandomInt = (max) => Math.floor(Math.random() * max);
+import app from '../index.js';
+import getRandomInt from '../getRandomInt.js';
+import isPrime from '../isPrime.js';
 
-export default () => {
-  const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
+const getComponents = () => {
   const number = getRandomInt(100);
   const question = number;
-  let d = 2;
-  while (number % d !== 0) {
-    d += 1;
-  }
-  const correctAnswer = d === number ? 'yes' : 'no';
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
 
-  return [task, question, correctAnswer];
+  return [question, correctAnswer];
+};
+
+export default () => {
+  app(getComponents, task);
 };
