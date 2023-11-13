@@ -1,30 +1,21 @@
-const getRandomInt = (max) => Math.floor(Math.random() * max);
+import app from '../index.js';
+import getRandomInt from '../getRandomInt.js';
+import calculate from '../calculate.js';
 
-export default () => {
-  const task = 'What is the result of the expression?';
+const task = 'What is the result of the expression?';
+
+const getComponents = () => {
   const num1 = getRandomInt(100);
   const num2 = getRandomInt(10);
-  const signs = ['+', '-', '*'];
   const signIndex = getRandomInt(3);
-  let question;
-  let correctAnswer;
+  const signs = ['+', '-', '*'];
 
-  switch (signs[signIndex]) {
-    case '+':
-      question = `${num1} + ${num2}`;
-      correctAnswer = String(num1 + num2);
-      break;
-    case '-':
-      question = `${num1} - ${num2}`;
-      correctAnswer = String(num1 - num2);
-      break;
-    case '*':
-      question = `${num1} * ${num2}`;
-      correctAnswer = String(num1 * num2);
-      break;
-    default:
-      break;
-  }
+  const question = `${num1} ${signs[signIndex]} ${num2}`;
+  const correctAnswer = String(calculate(num1, num2, signs[signIndex]));
 
-  return [task, question, correctAnswer];
+  return [question, correctAnswer];
+};
+
+export default () => {
+  app(getComponents, task);
 };
