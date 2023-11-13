@@ -5,8 +5,8 @@ import getGcd from '../calcGcd.js';
 const task = 'Find the greatest common divisor of given numbers.';
 
 const getComponents = () => {
-  const num1 = getRandomInt(100);
-  const num2 = getRandomInt(50);
+  const num1 = getRandomInt(1, 100);
+  const num2 = getRandomInt(1, 50);
 
   const question = `${num1} ${num2}`;
   const correctAnswer = String(getGcd(num1, num2));

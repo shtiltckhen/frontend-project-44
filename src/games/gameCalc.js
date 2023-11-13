@@ -5,9 +5,9 @@ import calculate from '../calculate.js';
 const task = 'What is the result of the expression?';
 
 const getComponents = () => {
-  const num1 = getRandomInt(100);
-  const num2 = getRandomInt(10);
-  const signIndex = getRandomInt(3);
+  const num1 = getRandomInt(0, 100);
+  const num2 = getRandomInt(0, 10);
+  const signIndex = getRandomInt(0, 3);
   const signs = ['+', '-', '*'];
 
   const question = `${num1} ${signs[signIndex]} ${num2}`;
