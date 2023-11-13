@@ -1,19 +1,19 @@
-const getRandomInt = () => Math.floor((Math.random() * 99) + 1);
+import app from '../index.js';
+import getRandomInt from '../getRandomInt.js';
+import getGcd from '../calcGcd.js';
 
-export default () => {
-  const task = 'Find the greatest common divisor of given numbers.';
-  let num1 = getRandomInt();
-  let num2 = getRandomInt();
+const task = 'Find the greatest common divisor of given numbers.';
+
+const getComponents = () => {
+  const num1 = getRandomInt(100);
+  const num2 = getRandomInt(50);
 
   const question = `${num1} ${num2}`;
+  const correctAnswer = String(getGcd(num1, num2));
 
-  while (num1 !== num2) {
-    if (num1 > num2) {
-      num1 -= num2;
-    } else {
-      num2 -= num1;
-    }
-  }
-  const correctAnswer = String(num1);
-  return [task, question, correctAnswer];
+  return [question, correctAnswer];
+};
+
+export default () => {
+  app(getComponents, task);
 };
