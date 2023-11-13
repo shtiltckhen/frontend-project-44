@@ -6,11 +6,11 @@
 
 Brain Games is a game consisting of five mini-games to boost your brain.
 
-*Requirements:* *npm version 10.2.0
-                *node version 21.1.0
+*Requirements:* npm version 10.2.0\
+                node version 21.1.0
 
-*Installing:* `git clone git@github.com:shtiltckhen/frontend-project-44.git`
-            `make install`
+*Installing:* `git clone git@github.com:shtiltckhen/frontend-project-44.git`\
+              `make install`
 
 *Launching the game:* Enter `brain-games`
 
