@@ -1,6 +1,19 @@
 import app from '../index.js';
 import getRandomInt from '../getRandomInt.js';
-import getGcd from '../calcGcd.js';
+
+const getGcd = (num1, num2) => {
+  let a = num1;
+  let b = num2;
+
+  while (a !== b) {
+    if (a > b) {
+      a -= b;
+    } else {
+      b -= a;
+    }
+  }
+  return a;
+};
 
 const task = 'Find the greatest common divisor of given numbers.';
 

@@ -1,6 +1,7 @@
 import app from '../index.js';
 import getRandomInt from '../getRandomInt.js';
-import isEven from '../isEven.js';
+
+const isEven = (number) => number % 2 === 0;
 
 const task = 'Answer "yes" if the number is even, otherwise answer "no".';
 

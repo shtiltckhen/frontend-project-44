@@ -1,6 +1,23 @@
 import app from '../index.js';
 import getRandomInt from '../getRandomInt.js';
-import calculate from '../calculate.js';
+
+const calculate = (num1, num2, sign) => {
+  let result;
+  switch (sign) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    default:
+      break;
+  }
+  return result;
+};
 
 const task = 'What is the result of the expression?';
 
