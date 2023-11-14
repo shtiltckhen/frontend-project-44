@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import brainCalc from '../src/games/gameEvenOrOdd.js';
+import startBrainCalc from '../src/games/gameEvenOrOdd.js';
 
-brainCalc();
+startBrainCalc();
