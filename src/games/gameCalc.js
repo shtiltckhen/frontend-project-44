@@ -14,7 +14,7 @@ const calculate = (num1, num2, sign) => {
       result = num1 * num2;
       break;
     default:
-      break;
+      throw new Error(`Unknown operator in expression: '${sign}'!`);
   }
   return result;
 };
